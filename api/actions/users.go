@@ -6,8 +6,8 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"upper.io/db.v3/mysql"
 
-	"skolar-api/config"
-	"skolar-api/models"
+	"skolar-api/api/config"
+	"skolar-api/api/models"
 )
 
 func ReadAllUsers() []models.User {
