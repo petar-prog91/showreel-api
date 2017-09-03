@@ -3,7 +3,7 @@ package helpers
 import (
 	"encoding/json"
 	"net/http"
-	"skolar/services/models"
+	"skolar-api/models"
 )
 
 func StatusUnauthorized(w http.ResponseWriter) {

@@ -8,10 +8,10 @@ import (
 	"github.com/julienschmidt/httprouter"
 	"golang.org/x/crypto/bcrypt"
 
-	"skolar/services/actions"
-	"skolar/services/helpers"
-	"skolar/services/models"
-	"skolar/services/services"
+	"skolar-api/actions"
+	"skolar-api/helpers"
+	"skolar-api/models"
+	"skolar-api/services"
 )
 
 func Authenticate(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
