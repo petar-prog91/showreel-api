@@ -26,7 +26,7 @@ func main() {
 	router.POST("/api/users", JwtAuth(controllers.CreateUser, 0))
 	router.DELETE("/api/users/:id", JwtAuth(controllers.DeleteUser, 0))
 
-	http.ListenAndServe(":8081", corsHandler(handlers.LoggingHandler(os.Stdout, router)))
+	http.ListenAndServe(":8080", corsHandler(handlers.LoggingHandler(os.Stdout, router)))
 }
 
 func JwtAuth(h httprouter.Handle, reqUserRole int) httprouter.Handle {
