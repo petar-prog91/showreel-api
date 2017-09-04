@@ -7,9 +7,9 @@ import (
 	"github.com/gorilla/handlers"
 	"github.com/julienschmidt/httprouter"
 
-	"skolar-api/microservices/users_service/controllers"
-	"skolar-api/microservices/users_service/helpers"
-	"skolar-api/microservices/users_service/services"
+	"skolar-api/users_service/controllers"
+	"skolar-api/users_service/helpers"
+	"skolar-api/users_service/services"
 )
 
 func main() {
@@ -20,13 +20,9 @@ func main() {
 	// Role 2: Parent
 	// Role 3: Student
 
-	// Regular Role: 1
-	router.PUT("/api/users/:id", JwtAuth(controllers.UpdateUser, 1))
-
-	router.GET("/api/users", JwtAuth(controllers.GetUsers, 3))
-	router.GET("/api/users/:id", JwtAuth(controllers.GetUser, 3))
-
-	// Admin Role Only: 0
+	router.PUT("/api/users/:id", JwtAuth(controllers.UpdateUser, 0))
+	router.GET("/api/users", JwtAuth(controllers.GetUsers, 0))
+	router.GET("/api/users/:id", JwtAuth(controllers.GetUser, 0))
 	router.POST("/api/users", JwtAuth(controllers.CreateUser, 0))
 	router.DELETE("/api/users/:id", JwtAuth(controllers.DeleteUser, 0))
 

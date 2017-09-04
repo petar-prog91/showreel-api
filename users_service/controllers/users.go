@@ -7,9 +7,9 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 
-	"skolar-api/api/actions"
-	"skolar-api/api/helpers"
-	"skolar-api/api/models"
+	"skolar-api/users_service/actions"
+	"skolar-api/users_service/helpers"
+	"skolar-api/users_service/models"
 )
 
 func GetUser(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
