@@ -4,7 +4,7 @@ import "upper.io/db.v3/mysql"
 
 var DBSettings = mysql.ConnectionURL{
 	Database: `skolar_users`,
-	Host:     `127.0.0.1`,
+	Host:     `mysql:3306`,
 	User:     `root`,
 	Password: `root`,
 }
