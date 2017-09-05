@@ -23,9 +23,9 @@ func main() {
 	// Role 3: Student
 
 	router.PUT("/api/users/:id", JwtAuth(controllers.UpdateUser, 0))
-	router.GET("/api/users", JwtAuth(controllers.GetUsers, 0))
+	router.GET("/api/users/", JwtAuth(controllers.GetUsers, 0))
 	router.GET("/api/users/:id", JwtAuth(controllers.GetUser, 0))
-	router.POST("/api/users", JwtAuth(controllers.CreateUser, 0))
+	router.POST("/api/users/", JwtAuth(controllers.CreateUser, 0))
 	router.DELETE("/api/users/:id", JwtAuth(controllers.DeleteUser, 0))
 
 	http.ListenAndServe(":8081", corsHandler(handlers.LoggingHandler(os.Stdout, router)))
