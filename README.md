@@ -1,13 +1,17 @@
 # Requirements
-- GoLang 1.7
+In order to run this API completely out of the box with all microservices running together, I suggest that you follow the docker setup I put in here. If you wish to run all of the microservices on your own, I might provide later on an explanation how to do it, but I strongly suggest following Docker Compose standard.
+
+- Docker & Docker Compose 3+
+- GoLang 1.7+
 - MySQL
 
 # Installation
-- Checkout the code from master branch
-- Navigate into the folder of the project
-- Open `config/dbconfig.go` file and adjust the MySQL credentials and database
-- While in project folder run project by using command `go run main.go`
-- By default API would run under `http://localhost:8081`
+- Install Docker & Docker Compose.
+- Checkout the code from master branch.
+- Navigate into the folder of the project.
+- In your terminal run command `docker-compose build`.
+- Once that is finished, run `docker-compose up`.
+- By default API will run under `http://localhost:8081`
 
 # Authentification
 If you imported SQL file provided in this repo under Web folder, you will have user with username: `admin` and password: `admin12345`
