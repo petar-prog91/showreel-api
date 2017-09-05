@@ -2,6 +2,7 @@ package services
 
 import (
 	"fmt"
+
 	"github.com/dgrijalva/jwt-go"
 )
 
@@ -9,15 +10,15 @@ var tokenSigningKey = []byte("y42jh9824j9h82j49h82j40g9im240h9240h94p2hjk0249h09
 
 type MyJWTClaims struct {
 	UserName string `json:"userName"`
-	UserRole int `json:"userRole"`
+	SGroup   int    `json:"sGroup"`
 	jwt.StandardClaims
 }
 
-func GenerateNewToken(userName string, userRole int) (string, error) {
+func GenerateNewToken(userName string, sGroup int) (string, error) {
 	// Create the token
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims {
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"userName": userName,
-		"userRole": userRole,
+		"sGroup":   sGroup,
 	})
 	// Sign and get the complete encoded token as a string using the secret
 	tokenString, err := token.SignedString(tokenSigningKey)

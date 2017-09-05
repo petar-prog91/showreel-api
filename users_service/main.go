@@ -40,9 +40,9 @@ func JwtAuth(h httprouter.Handle, reqUserRole int) httprouter.Handle {
 				helpers.StatusUnauthorized(w)
 			}
 
-			var jwtUserRole = claims.UserRole
+			var jwtUserRole = claims.SGroup
 
-			if validToken && jwtUserRole >= reqUserRole {
+			if validToken && jwtUserRole == reqUserRole {
 				// Delegate request to the given handle
 				h(w, r, ps)
 			} else {
