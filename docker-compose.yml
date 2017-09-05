@@ -4,13 +4,11 @@ services:
   users_service:
     build: ./users_service
     links:
-      - mysql_db
-    depends_on:
-      - mysql_db
+      - users_service_mysql_db
     ports:
       - "8081:8081"
 
-  mysql_db:
+  users_service_mysql_db:
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
