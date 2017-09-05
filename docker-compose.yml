@@ -1,0 +1,13 @@
+version: '3'
+services:
+  users_service:
+    build: ./users_service
+    ports:
+      - "8081:8081"
+  mysql:
+    image: "mysql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=skolar_users
+    ports:
+      - "3306:3306"
