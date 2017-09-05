@@ -97,7 +97,7 @@ func CreateUser(userData models.User) models.User {
 	userCollection.Insert(models.User{
 		Username: userData.Username,
 		Password: string(hashedPassword),
-		UserRole: 1,
+		SGroup:   1,
 	})
 
 	err = dbSess.Collection("user").Find("username", userData.Username).One(&user)
