@@ -41,7 +41,7 @@ func Authenticate(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 			return
 		}
 
-		createdToken, err := services.GenerateNewToken(foundUser.Username, foundUser.UserRole)
+		createdToken, err := services.GenerateNewToken(foundUser.Username, foundUser.SGroup)
 
 		if err != nil {
 			fmt.Println("Creating token failed")
