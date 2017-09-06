@@ -8,6 +8,13 @@ services:
     ports:
       - "8081:8081"
 
+  auth_service:
+    build: ./auth_service
+    links:
+      - users_service_mysql_db
+    ports:
+      - "8082:8082"
+
   users_service_mysql_db:
     image: mysql
     environment:

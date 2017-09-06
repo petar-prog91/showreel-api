@@ -17,7 +17,7 @@ func main() {
 
 	router.POST("/api/authenticate", controllers.Authenticate)
 
-	http.ListenAndServe(":8081", corsHandler(handlers.LoggingHandler(os.Stdout, router)))
+	http.ListenAndServe(":8082", corsHandler(handlers.LoggingHandler(os.Stdout, router)))
 }
 
 func JwtAuth(h httprouter.Handle, reqUserRole int) httprouter.Handle {
