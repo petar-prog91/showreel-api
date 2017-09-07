@@ -14,9 +14,6 @@ import (
 
 func main() {
 	router := httprouter.New()
-
-	router.POST("/api/authenticate", controllers.Authenticate)
-
 	// Role 0: Admin
 	// Role 1: Teacher
 	// Role 2: Parent
