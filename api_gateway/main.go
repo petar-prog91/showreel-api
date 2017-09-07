@@ -35,7 +35,7 @@ func main() {
 	app.Delete("/api/authenticate/**", handler(authServiceProxy))
 	app.Patch("/api/authenticate/**", handler(authServiceProxy))
 
-	app.RunOnAddr(":8080")
+	app.Run()
 }
 
 func handler(p *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request, martini.Params) {
