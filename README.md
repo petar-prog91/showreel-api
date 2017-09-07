@@ -13,7 +13,7 @@ Requirements bellow come by using Docker setup mentioned here, so you don't have
 - Navigate into the folder of the project.
 - In your terminal run command `docker-compose build`.
 - Once that is finished, run `docker-compose up`.
-- By default API will run under `http://localhost:8081`
+- By default API will run under `http://localhost:8080`
 
 # Authentification
 If you imported SQL file provided in this repo under Web folder, you will have user with username: `admin` and password: `admin12345`
