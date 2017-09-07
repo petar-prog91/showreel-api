@@ -2,6 +2,8 @@
 In order to run this API completely out of the box with all microservices running together, I suggest that you follow the docker setup I put in here. If you wish to run all of the microservices on your own, I might provide later on an explanation how to do it, but I strongly suggest following Docker Compose standard.
 
 - Docker & Docker Compose 3+
+
+Requirements bellow come by using Docker setup mentioned here, so you don't have to think about installing it.
 - GoLang 1.7+
 - MySQL
 
