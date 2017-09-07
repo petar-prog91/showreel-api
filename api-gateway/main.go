@@ -13,6 +13,7 @@ import (
 func main() {
 	usersService, err := url.Parse("http://localhost:8081")
 	authService, err := url.Parse("http://localhost:8082")
+
 	if err != nil {
 		panic(err)
 	}
