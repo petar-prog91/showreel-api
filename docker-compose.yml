@@ -1,6 +1,11 @@
 version: '3'
 
 services:
+  api_gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+
   users_service:
     build: ./users_service
     links:
