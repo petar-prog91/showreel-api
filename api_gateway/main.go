@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"net/url"
-	"skolar-api/api-gateway/helpers"
-	"skolar-api/api-gateway/services"
+	"skolar-api/api_gateway/helpers"
+	"skolar-api/api_gateway/services"
 
 	"github.com/codegangsta/martini"
 )
