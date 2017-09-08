@@ -3,6 +3,9 @@ version: '3'
 services:
   api_gateway:
     build: ./api_gateway
+    links: 
+      - users_service
+      - auth_service
     ports:
       - "8080:3000"
 

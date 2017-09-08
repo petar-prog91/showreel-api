@@ -11,8 +11,8 @@ import (
 )
 
 func main() {
-	usersService, err := url.Parse("http://localhost:8081")
-	authService, err := url.Parse("http://localhost:8082")
+	usersService, err := url.Parse("http://users_service:8081")
+	authService, err := url.Parse("http://auth_service:8082")
 
 	if err != nil {
 		panic(err)
@@ -23,22 +23,18 @@ func main() {
 
 	app := martini.Classic()
 
-	app.Get("/api/users/**", handler(usersServiceProxy))
-	app.Post("/api/users/**", handler(usersServiceProxy))
-	app.Put("/api/users/**", handler(usersServiceProxy))
-	app.Delete("/api/users/**", handler(usersServiceProxy))
-	app.Patch("/api/users/**", handler(usersServiceProxy))
+	app.Get("/api/users/**", authHandler(usersServiceProxy))
+	app.Post("/api/users/**", authHandler(usersServiceProxy))
+	app.Put("/api/users/**", authHandler(usersServiceProxy))
+	app.Delete("/api/users/**", authHandler(usersServiceProxy))
+	app.Patch("/api/users/**", authHandler(usersServiceProxy))
 
-	app.Get("/api/authenticate/**", handler(authServiceProxy))
-	app.Post("/api/authenticate/**", handler(authServiceProxy))
-	app.Put("/api/authenticate/**", handler(authServiceProxy))
-	app.Delete("/api/authenticate/**", handler(authServiceProxy))
-	app.Patch("/api/authenticate/**", handler(authServiceProxy))
+	app.Post("/api/authenticate/**", defaultHandler(authServiceProxy))
 
 	app.Run()
 }
 
-func handler(p *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request, martini.Params) {
+func authHandler(p *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request, martini.Params) {
 	return func(w http.ResponseWriter, r *http.Request, params martini.Params) {
 		var jwtToken = r.Header["Auth_jwt_token"]
 
@@ -60,5 +56,11 @@ func handler(p *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request, 
 			// Request Basic Authentication otherwise
 			helpers.StatusUnauthorized(w)
 		}
+	}
+}
+
+func defaultHandler(p *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request, martini.Params) {
+	return func(w http.ResponseWriter, r *http.Request, params martini.Params) {
+		p.ServeHTTP(w, r)
 	}
 }

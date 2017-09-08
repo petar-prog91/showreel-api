@@ -15,7 +15,7 @@ import (
 func main() {
 	router := httprouter.New()
 
-	router.POST("/api/authenticate", controllers.Authenticate)
+	router.POST("/api/authenticate/", controllers.Authenticate)
 
 	http.ListenAndServe(":8082", corsHandler(handlers.LoggingHandler(os.Stdout, router)))
 }
