@@ -20,6 +20,7 @@ func main() {
 	// Role 3: Student
 
 	router.PUT("/api/users/:id", JwtAuth(controllers.UpdateUser, 0))
+	router.PATCH("/api/users/:id", JwtAuth(controllers.UpdateUser, 0))
 	router.GET("/api/users/", JwtAuth(controllers.GetUsers, 0))
 	router.GET("/api/users/:id", JwtAuth(controllers.GetUser, 0))
 	router.POST("/api/users/", JwtAuth(controllers.CreateUser, 0))
@@ -59,7 +60,7 @@ func corsHandler(h http.Handler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if origin := r.Header.Get("Origin"); origin != "" {
 			w.Header().Set("Access-Control-Allow-Origin", origin)
-			w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+			w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE, PATCH")
 			w.Header().Set("Access-Control-Allow-Headers",
 				"Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
 		}

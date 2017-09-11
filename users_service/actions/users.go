@@ -91,14 +91,29 @@ func CreateUser(userData models.User) models.User {
 	// Query all results and fill the users variable with them.
 	var user models.User
 
-	password := []byte(userData.Password)
+	var password = []byte(userData.Password)
 	hashedPassword, err := bcrypt.GenerateFromPassword(password, bcrypt.DefaultCost)
+	userData.Password = string(hashedPassword)
 
-	userCollection.Insert(models.User{
-		Username: userData.Username,
-		Password: string(hashedPassword),
-		SGroup:   1,
+	_, userErr := userCollection.Insert(models.User{
+		Username:    userData.Username,
+		Password:    userData.Password,
+		SGroup:      userData.SGroup,
+		FirstName:   userData.FirstName,
+		LastName:    userData.LastName,
+		Address:     userData.Address,
+		City:        userData.City,
+		ZipCode:     userData.ZipCode,
+		Email:       userData.Email,
+		Phone:       userData.Phone,
+		DateOfBirth: userData.DateOfBirth,
+		Picture:     userData.Picture,
 	})
+
+	if userErr != nil {
+		log.Printf("userCollection.Insert(): %q\n", userErr)
+		return models.User{}
+	}
 
 	err = dbSess.Collection("user").Find("username", userData.Username).One(&user)
 

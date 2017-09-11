@@ -24,7 +24,7 @@ CREATE TABLE `user` (
   `zipcode` int(11),
   `email` text CHARACTER SET utf8,
   `phone` text CHARACTER SET utf8,
-  `date_of_birth` date,
+  `date_of_birth` varchar(255) CHARACTER SET utf8,
   `picture` text CHARACTER SET utf8,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
