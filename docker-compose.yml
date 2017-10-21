@@ -12,24 +12,24 @@ services:
   users_service:
     build: ./users_service
     links:
-      - users_service_mysql_db
+      - showreel_mysql_db
     ports:
       - "8081:8081"
 
   auth_service:
     build: ./auth_service
     links:
-      - users_service_mysql_db
+      - showreel_mysql_db
     ports:
       - "8082:8082"
 
-  users_service_mysql_db:
+  showreel_mysql_db:
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=skolar_users
+      - MYSQL_DATABASE=showreel
     volumes:
-      - ./users_service_db:/docker-entrypoint-initdb.d
+      - ./showreel_mysql_db:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
 
