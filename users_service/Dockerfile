@@ -1,8 +1,8 @@
 FROM golang
 
-ADD . /go/src/skolar-api/users_service
+ADD . /go/src/showreel-api/users_service
 
-RUN go install skolar-api/users_service
+RUN go install showreel-api/users_service
 
 ENTRYPOINT /go/bin/users_service
 

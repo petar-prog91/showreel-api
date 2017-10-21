@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"net/url"
-	"skolar-api/api_gateway/helpers"
-	"skolar-api/api_gateway/services"
+	"showreel-api/api_gateway/helpers"
+	"showreel-api/api_gateway/services"
 
 	"github.com/codegangsta/martini"
 )

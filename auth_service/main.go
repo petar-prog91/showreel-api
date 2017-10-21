@@ -7,9 +7,9 @@ import (
 	"github.com/gorilla/handlers"
 	"github.com/julienschmidt/httprouter"
 
-	"skolar-api/auth_service/controllers"
-	"skolar-api/auth_service/helpers"
-	"skolar-api/auth_service/services"
+	"showreel-api/auth_service/controllers"
+	"showreel-api/auth_service/helpers"
+	"showreel-api/auth_service/services"
 )
 
 func main() {

@@ -1,8 +1,8 @@
 FROM golang
 
-ADD . /go/src/skolar-api/api_gateway
+ADD . /go/src/showreel-api/api_gateway
 
-RUN go install skolar-api/api_gateway
+RUN go install showreel-api/api_gateway
 
 ENTRYPOINT /go/bin/api_gateway
 

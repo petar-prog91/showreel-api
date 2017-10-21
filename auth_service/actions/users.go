@@ -5,8 +5,8 @@ import (
 
 	"upper.io/db.v3/mysql"
 
-	"skolar-api/auth_service/config"
-	"skolar-api/auth_service/models"
+	"showreel-api/auth_service/config"
+	"showreel-api/auth_service/models"
 )
 
 func ReadUserByUsername(username string) models.User {
