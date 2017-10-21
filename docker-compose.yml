@@ -30,6 +30,10 @@ services:
       - MYSQL_DATABASE=showreel
     volumes:
       - ./showreel_mysql_db:/docker-entrypoint-initdb.d
+
+    # Ports explanation: First port is external public port for access from your machine, like using CURL or Postman etc ...
+    # Second port is the port of the container itself, and it's used by other containers to communicate.
+    # Check in other services dbconfig.go files, they connect to 3306 since they're within the same network
     ports:
       - "3308:3306"
 
