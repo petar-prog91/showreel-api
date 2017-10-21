@@ -96,18 +96,10 @@ func CreateUser(userData models.User) models.User {
 	userData.Password = string(hashedPassword)
 
 	_, userErr := userCollection.Insert(models.User{
-		Username:    userData.Username,
-		Password:    userData.Password,
-		SGroup:      userData.SGroup,
-		FirstName:   userData.FirstName,
-		LastName:    userData.LastName,
-		Address:     userData.Address,
-		City:        userData.City,
-		ZipCode:     userData.ZipCode,
-		Email:       userData.Email,
-		Phone:       userData.Phone,
-		DateOfBirth: userData.DateOfBirth,
-		Picture:     userData.Picture,
+		Username: userData.Username,
+		Password: userData.Password,
+		SGroup:   userData.SGroup,
+		Email:    userData.Email,
 	})
 
 	if userErr != nil {
