@@ -7,8 +7,8 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 
+	"showreel-api/helpers"
 	"showreel-api/users_service/actions"
-	"showreel-api/users_service/helpers"
 	"showreel-api/users_service/models"
 )
 

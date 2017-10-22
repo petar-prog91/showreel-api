@@ -9,9 +9,8 @@ import (
 	"golang.org/x/crypto/bcrypt"
 
 	"showreel-api/auth_service/actions"
-	"showreel-api/auth_service/helpers"
 	"showreel-api/auth_service/models"
-	"showreel-api/auth_service/services"
+	"showreel-api/helpers"
 )
 
 func Authenticate(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
@@ -41,7 +40,7 @@ func Authenticate(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 			return
 		}
 
-		createdToken, err := services.GenerateNewToken(foundUser.Username, foundUser.SGroup)
+		createdToken, err := helpers.GenerateNewToken(foundUser.Id, foundUser.Username, foundUser.SGroup)
 
 		if err != nil {
 			fmt.Println("Creating token failed")
