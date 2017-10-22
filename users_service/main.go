@@ -24,5 +24,5 @@ func main() {
 	router.GET("/api/users/:id", helpers.JwtAuth(controllers.GetUser, 1))
 	router.DELETE("/api/users/:id", helpers.JwtAuth(controllers.DeleteUser, 1))
 
-	http.ListenAndServe(":8081", helpers.corsHandler(handlers.LoggingHandler(os.Stdout, router)))
+	http.ListenAndServe(":8081", helpers.CorsHandler(handlers.LoggingHandler(os.Stdout, router)))
 }

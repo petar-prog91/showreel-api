@@ -5,6 +5,8 @@ import (
 	"net/http/httputil"
 	"net/url"
 
+	"github.com/petar-prog91/showreel-api/helpers"
+
 	"github.com/codegangsta/martini"
 )
 
@@ -22,16 +24,16 @@ func main() {
 	app := martini.Classic()
 
 	// Users Service
-	app.Options("/api/users/**", helpers.corsHandler(usersServiceProxy))
-	app.Get("/api/users/**", helpers.authHandler(usersServiceProxy))
-	app.Post("/api/users/**", helpers.authHandler(usersServiceProxy))
-	app.Put("/api/users/**", helpers.authHandler(usersServiceProxy))
-	app.Delete("/api/users/**", helpers.authHandler(usersServiceProxy))
-	app.Patch("/api/users/**", helpers.authHandler(usersServiceProxy))
+	app.Options("/api/users/**", helpers.CorsHandler(usersServiceProxy))
+	app.Get("/api/users/**", helpers.AuthHandler(usersServiceProxy))
+	app.Post("/api/users/**", helpers.AuthHandler(usersServiceProxy))
+	app.Put("/api/users/**", helpers.AuthHandler(usersServiceProxy))
+	app.Delete("/api/users/**", helpers.AuthHandler(usersServiceProxy))
+	app.Patch("/api/users/**", helpers.AuthHandler(usersServiceProxy))
 
 	// Auth Service
 	app.Post("/api/authenticate/**", defaultHandler(authServiceProxy))
-	app.Options("/api/authenticate/**", helpers.corsHandler(authServiceProxy))
+	app.Options("/api/authenticate/**", helpers.CorsHandler(authServiceProxy))
 
 	app.Run()
 }

@@ -7,7 +7,7 @@ import (
 	"github.com/codegangsta/martini"
 )
 
-func authHandler(p *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request, martini.Params) {
+func AuthHandler(p *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request, martini.Params) {
 	return func(w http.ResponseWriter, r *http.Request, params martini.Params) {
 		var jwtToken = r.Header["Auth_jwt_token"]
 
