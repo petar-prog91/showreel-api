@@ -98,7 +98,6 @@ func CreateUser(userData models.User) models.User {
 	_, userErr := userCollection.Insert(models.User{
 		Username: userData.Username,
 		Password: userData.Password,
-		Sgroup:   userData.Sgroup || 1,
 		Email:    userData.Email,
 	})
 

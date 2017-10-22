@@ -40,7 +40,7 @@ func Authenticate(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 			return
 		}
 
-		createdToken, err := helpers.GenerateNewToken(foundUser.Id, foundUser.Username, foundUser.Sgroup)
+		createdToken, err := helpers.GenerateNewToken(foundUser.Id, foundUser.Username)
 
 		if err != nil {
 			fmt.Println("Creating token failed")

@@ -16,7 +16,6 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
   `password` text,
-  `sgroup` int(11),
   `email` text,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
@@ -25,9 +24,9 @@ CREATE TABLE `user` (
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 
-INSERT INTO `user` (`id`, `username`, `password`, `sgroup`, `email`)
+INSERT INTO `user` (`id`, `username`, `password`, `email`)
 VALUES
-	(1,'admin','$2a$10$06pcLFSy0tlXRgbrCY33U.C9mwBjwDIp1Ee1/g1p7OYNKvtibM7Ua', 0, 'admin@yourwebsite.com');
+	(1,'admin','$2a$10$06pcLFSy0tlXRgbrCY33U.C9mwBjwDIp1Ee1/g1p7OYNKvtibM7Ua', 'admin@yourwebsite.com');
 
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;

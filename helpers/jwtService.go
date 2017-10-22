@@ -13,16 +13,14 @@ var tokenSigningKey = []byte("y42jh9824j9h82j49h82j40g9im240h9240h94p2hjk0249h09
 type MyJWTClaims struct {
 	Id       int    `json:"id"`
 	UserName string `json:"userName"`
-	Sgroup   int    `json:"sGroup"`
 	jwt.StandardClaims
 }
 
-func GenerateNewToken(userId int, userName string, sGroup int) (string, error) {
+func GenerateNewToken(userId int, userName string) (string, error) {
 	// Create the token
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"id":       userId,
 		"userName": userName,
-		"sGroup":   sGroup,
 	})
 	// Sign and get the complete encoded token as a string using the secret
 	tokenString, err := token.SignedString(tokenSigningKey)
@@ -55,15 +53,11 @@ func JwtAuth(h httprouter.Handle, reqUserRole int) httprouter.Handle {
 			}
 
 			var userID = claims.Id
-			var jwtUserRole = claims.Sgroup
 			var paramID = ps.ByName("id")
 
-			var isAdmin = checkIfAdmin(jwtUserRole)
 			var canAccessRegularUser = checkUserId(paramID, string(userID))
 
-			if validToken && isAdmin {
-				h(w, r, ps)
-			} else if validToken && canAccessRegularUser {
+			if validToken && canAccessRegularUser {
 				h(w, r, ps)
 			} else {
 				StatusUnauthorized(w)
@@ -73,14 +67,6 @@ func JwtAuth(h httprouter.Handle, reqUserRole int) httprouter.Handle {
 			StatusUnauthorized(w)
 		}
 	}
-}
-
-func checkIfAdmin(jwtUserRole int) bool {
-	if jwtUserRole == 0 {
-		return true
-	}
-
-	return false
 }
 
 func checkUserId(requestId string, userId string) bool {
