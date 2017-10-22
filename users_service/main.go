@@ -7,8 +7,8 @@ import (
 	"github.com/gorilla/handlers"
 	"github.com/julienschmidt/httprouter"
 
-	"showreel-api/helpers"
-	"showreel-api/users_service/controllers"
+	"github.com/petar-prog91/showreel-api/helpers"
+	"github.com/petar-prog91/showreel-api/users_service/controllers"
 )
 
 func main() {

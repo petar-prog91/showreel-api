@@ -6,8 +6,8 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"upper.io/db.v3/mysql"
 
-	"showreel-api/users_service/config"
-	"showreel-api/users_service/models"
+	"github.com/petar-prog91/showreel-api/users_service/config"
+	"github.com/petar-prog91/showreel-api/users_service/models"
 )
 
 func ReadAllUsers() []models.User {

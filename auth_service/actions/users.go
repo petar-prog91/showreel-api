@@ -5,8 +5,8 @@ import (
 
 	"upper.io/db.v3/mysql"
 
-	"showreel-api/auth_service/config"
-	"showreel-api/auth_service/models"
+	"github.com/petar-prog91/showreel-api/auth_service/config"
+	"github.com/petar-prog91/showreel-api/auth_service/models"
 )
 
 func ReadUserByUsername(username string) models.User {

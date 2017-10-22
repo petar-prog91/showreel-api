@@ -4,8 +4,7 @@ import (
 	"net/http"
 	"os"
 
-	"showreel-api/auth_service/controllers"
-	"showreel-api/helpers"
+	"github.com/petar-prog91/showreel-api/auth_service/controllers"
 
 	"github.com/gorilla/handlers"
 	"github.com/julienschmidt/httprouter"

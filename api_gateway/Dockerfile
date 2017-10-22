@@ -1,8 +1,8 @@
 FROM golang
 
-ADD . /go/src/showreel-api/api_gateway
+ADD . /go/src/github.com/petar-prog91/showreel-api/api_gateway
 
-RUN go install showreel-api/api_gateway
+RUN go install github.com/petar-prog91/showreel-api/api_gateway
 
 ENTRYPOINT /go/bin/api_gateway
 

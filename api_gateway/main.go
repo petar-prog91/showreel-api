@@ -4,7 +4,6 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"net/url"
-	"showreel-api/helpers"
 
 	"github.com/codegangsta/martini"
 )

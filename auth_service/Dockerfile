@@ -1,8 +1,8 @@
 FROM golang
 
-ADD . /go/src/showreel-api/auth_service
+ADD . /go/src/github.com/petar-prog91/showreel-api/auth_service
 
-RUN go install showreel-api/auth_service
+RUN go install github.com/petar-prog91/showreel-api/auth_service
 
 ENTRYPOINT /go/bin/auth_service
 
