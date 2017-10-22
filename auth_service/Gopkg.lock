@@ -2,6 +2,24 @@
 
 
 [[projects]]
+  name = "github.com/codegangsta/inject"
+  packages = ["."]
+  revision = "37d7f8432a3e684eef9b2edece76bdfa6ac85b39"
+  version = "v1.0-rc1"
+
+[[projects]]
+  name = "github.com/codegangsta/martini"
+  packages = ["."]
+  revision = "49411a5b646861ad29a6ddd5351717a0a9c49b94"
+  version = "v1.0"
+
+[[projects]]
+  name = "github.com/dgrijalva/jwt-go"
+  packages = ["."]
+  revision = "dbeaa9332f19a944acb5736b4456cfcc02140e29"
+  version = "v3.1.0"
+
+[[projects]]
   name = "github.com/go-sql-driver/mysql"
   packages = ["."]
   revision = "a0583e0143b1624142adab07e0e97fe106d99561"
@@ -21,6 +39,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/petar-prog91/showreel-api"
+  packages = ["auth_service/actions","auth_service/config","auth_service/controllers","auth_service/models","helpers","users_service/models"]
+  revision = "3ee58fecce9c0e5f0934dff027f9ac9565ece712"
+
+[[projects]]
+  branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish"]
   revision = "81e90905daefcd6fd217b62423c0908922eadb30"
@@ -34,6 +58,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "367ecefd368be6056631ef1c53d29dfa3fb58b8afa1d9eeaf0ae3af2435579e6"
+  inputs-digest = "781041c6b6a7e7770c51cfdb5d21431d42a95e8c9de673f368e1a6c0ce9c4226"
   solver-name = "gps-cdcl"
   solver-version = 1
