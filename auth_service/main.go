@@ -3,7 +3,8 @@ package main
 import (
 	"net/http"
 	"os"
-	"showreel-api/helpers"
+
+	"github.com/petar-prog91/showreel-api/helpers"
 
 	"github.com/petar-prog91/showreel-api/auth_service/controllers"
 
