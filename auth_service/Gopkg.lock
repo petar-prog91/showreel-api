@@ -41,7 +41,7 @@
   branch = "master"
   name = "github.com/petar-prog91/showreel-api"
   packages = ["auth_service/actions","auth_service/config","auth_service/controllers","auth_service/models","helpers","users_service/models"]
-  revision = "cbc02d9ba9240a5955197b3d623d14fddb5739c0"
+  revision = "55fd86233e63c68b715d70baa737310409b9fc80"
 
 [[projects]]
   branch = "master"
