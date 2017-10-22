@@ -13,9 +13,27 @@
   revision = "49411a5b646861ad29a6ddd5351717a0a9c49b94"
   version = "v1.0"
 
+[[projects]]
+  name = "github.com/dgrijalva/jwt-go"
+  packages = ["."]
+  revision = "dbeaa9332f19a944acb5736b4456cfcc02140e29"
+  version = "v3.1.0"
+
+[[projects]]
+  name = "github.com/julienschmidt/httprouter"
+  packages = ["."]
+  revision = "8c199fb6259ffc1af525cc3ad52ee60ba8359669"
+  version = "v1.1"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/petar-prog91/showreel-api"
+  packages = ["helpers","users_service/models"]
+  revision = "cbc02d9ba9240a5955197b3d623d14fddb5739c0"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "12da944abdc4cd02e9a29139f2a60e024a3ca859e6f86067f141df3780a537db"
+  inputs-digest = "0228936625292fd6d7485521e38675e2d8a87e5305cf3b5738600c7855626d78"
   solver-name = "gps-cdcl"
   solver-version = 1

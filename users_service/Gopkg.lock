@@ -41,23 +41,23 @@
   branch = "master"
   name = "github.com/petar-prog91/showreel-api"
   packages = ["helpers","users_service/actions","users_service/config","users_service/controllers","users_service/models"]
-  revision = "3ee58fecce9c0e5f0934dff027f9ac9565ece712"
+  revision = "cbc02d9ba9240a5955197b3d623d14fddb5739c0"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish"]
-  revision = "81e90905daefcd6fd217b62423c0908922eadb30"
+  revision = "edd5e9b0879d13ee6970a50153d85b8fec9f7686"
 
 [[projects]]
   name = "upper.io/db.v3"
   packages = [".","internal/cache","internal/cache/hashstructure","internal/immutable","internal/sqladapter","internal/sqladapter/compat","internal/sqladapter/exql","lib/reflectx","lib/sqlbuilder","mysql"]
-  revision = "46f50a98f8d5d77d1d4631f1bcc0ce6496e55734"
-  version = "v3.4.0"
+  revision = "4ceccb1227aba5fc0f71ca3adc5dd759dfbc093e"
+  version = "v3.5.0"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "91864d3066260338d58f8f7faaf57f730dbfd6840b251a128ab20290d2d2d2bf"
+  inputs-digest = "47ce07b7e00d94d367dad7ac6a583914de66641431c4612859794030b6b77498"
   solver-name = "gps-cdcl"
   solver-version = 1
