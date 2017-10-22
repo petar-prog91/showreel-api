@@ -26,7 +26,7 @@ func main() {
 	// Users Service
 	app.Options("/api/users/**", helpers.CorsHandler(usersServiceProxy))
 	app.Get("/api/users/**", helpers.AuthHandler(usersServiceProxy))
-	app.Post("/api/users/**", helpers.AuthHandler(usersServiceProxy))
+	app.Post("/api/users/**", defaultHandler(usersServiceProxy))
 	app.Put("/api/users/**", helpers.AuthHandler(usersServiceProxy))
 	app.Delete("/api/users/**", helpers.AuthHandler(usersServiceProxy))
 	app.Patch("/api/users/**", helpers.AuthHandler(usersServiceProxy))
