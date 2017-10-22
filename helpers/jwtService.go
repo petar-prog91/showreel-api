@@ -13,7 +13,7 @@ var tokenSigningKey = []byte("y42jh9824j9h82j49h82j40g9im240h9240h94p2hjk0249h09
 type MyJWTClaims struct {
 	Id       int    `json:"id"`
 	UserName string `json:"userName"`
-	SGroup   int    `json:"sGroup"`
+	Sgroup   int    `json:"sGroup"`
 	jwt.StandardClaims
 }
 
@@ -55,7 +55,7 @@ func JwtAuth(h httprouter.Handle, reqUserRole int) httprouter.Handle {
 			}
 
 			var userID = claims.Id
-			var jwtUserRole = claims.SGroup
+			var jwtUserRole = claims.Sgroup
 			var paramID = ps.ByName("id")
 
 			var isAdmin = checkIfAdmin(jwtUserRole)
