@@ -14,6 +14,7 @@ Requirements bellow come by using Docker setup mentioned here, so you don't have
 - In your terminal run command `docker-compose build`.
 - Once that is finished, run `docker-compose up`.
 - By default API will run under `http://localhost:8080`
+- Sometimes, if some application is already running on port 8080 (very usual case for developers), it's best to adjust ports in docker-compose.yml file
 
 # Authentification
 If you imported SQL file provided in this repo under Web folder, you will have user with username: `admin` and password: `admin12345`

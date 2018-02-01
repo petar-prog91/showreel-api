@@ -7,7 +7,7 @@ services:
       - users_service
       - auth_service
     ports:
-      - "8080:3000"
+      - "8080:3000" # If some application is already running on 8080 port, docker image won't start and it's best to change the port to something else
 
   users_service:
     build: ./users_service
