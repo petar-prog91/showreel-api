@@ -11,6 +11,8 @@ import (
 )
 
 func main() {
+	// TODO: Simple solution -> Read ports from a one place config file
+	// TODO: Cooler solution -> Make service discovery possible, and find out which service is on which port before starting the app
 	usersService, err := url.Parse("http://users_service:8081")
 	authService, err := url.Parse("http://auth_service:8082")
 
