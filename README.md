@@ -16,6 +16,12 @@ Requirements bellow come by using Docker setup mentioned here, so you don't have
 - By default API will run under `http://localhost:8080`
 - Sometimes, if some application is already running on port 8080 (very usual case for developers), it's best to adjust ports in docker-compose.yml file
 
+# Database
+- Using whatever method you know connect to your local MySQL database on port 3308 (MySQL DB is provided by docker, so no need for installations)
+- If there isn't database called `showreel` create one
+- Once logged in the database, import file `showreel_init.sql` from this repo
+- Then you will have `admin` user imported with password `admin12345`
+
 # Authentification
 If you imported SQL file provided in this repo under Web folder, you will have user with username: `admin` and password: `admin12345`
 
